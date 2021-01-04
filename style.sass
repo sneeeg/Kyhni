@@ -1,0 +1,454 @@
+body
+  margin: 0
+  padding: 0
+  background: #fcfcfc
+  color: #333
+
+html
+  margin: 0
+  padding: 0
+  font-family: 'Montserrat', sans-serif
+
+div
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+p,h1,h2,h3,h4,h5,span
+  margin: 0
+
+a
+  text-decoration: none
+  font-family: 'Montserrat', sans-serif
+
+button
+  font-family: 'Montserrat', sans-serif
+  border-style: none
+  cursor: pointer
+
+button:focus
+  outline: none
+
+input:focus
+  outline: none
+
+section
+  padding: 7vh calc(50% - 600px)
+
+.title
+  text-transform: uppercase
+  font-weight: 900
+  font-size: 28px
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+
+.title h1
+  font-size: 28px
+  font-weight: 900
+
+.title span
+  font-size: 28px
+  font-weight: 900
+
+.container
+  max-width: 90%
+  margin: auto
+
+.top_head
+  display: flex
+  align-items: center
+  justify-content: space-between
+  background: #FBD846
+  height: 50px
+  padding: 0 calc(50% - 600px)
+
+.top_head p
+  font-size: 14px
+  font-weight: 400
+
+.top_head h5
+  font-size: 16px
+  font-weight: 600
+
+header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 18px calc(50% - 600px)
+  background: #fff
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1)
+
+header ul
+  display: flex
+  align-items: center
+
+header ul li
+  display: block
+  font-size: 14px
+  font-weight: 600
+
+header ul li a:hover
+  color: #99CB38
+  transition: 0.3s
+
+header ul li:not(:first-child)
+  margin-left: 20px
+
+footer
+  background: #333333
+  height: 245px
+  display: flex
+  justify-content: space-between
+  padding: 18px calc(50% - 600px)
+
+footer div
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+footer h1
+  color: #818181
+  font-size: 20px
+  font-weight: 600
+
+footer a
+  color: #fff
+  font-weight: 400
+  font-size: 16px
+
+footer p
+  color: #fff
+  font-weight: 400
+  font-size: 16px
+  width: 15vw
+
+.main
+  background-image: url("img/mainbg.png")
+  background-repeat: no-repeat
+  background-position: right
+  background-size: 80vh 100%
+
+.block_content
+  width: 35vw
+  padding: 5vh 0
+
+.main h1
+  font-size: 35px
+  font-weight: 900
+  color: #333
+
+.main p
+  line-height: 22px
+  color: #333
+  font-weight: 400
+  font-size: 18px
+  margin-top: 2vh
+
+.description_block
+  display: flex
+  align-items: center
+  margin-top: 7vh
+
+.description_item
+  display: flex
+  align-items: center
+
+.description_item:not(:first-child)
+  margin-left: 30px
+
+.description_item p
+  margin-top: 0
+  margin-left: 10px
+  font-size: 16px
+  font-weight: 500
+
+.action_block
+  display: flex
+  align-items: center
+
+.offer
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+
+.offer p
+  font-weight: 500
+  font-size: 16px
+
+
+.action_btn
+  background: linear-gradient(269.89deg, #FBD846 0.07%, #FFE888 99.89%)
+  box-shadow: 5px 8px 5px rgba(248, 204, 85, 0.1)
+  border-radius: 30px
+  padding: 15px 60px
+  font-size: 20px
+  font-weight: 700
+
+.construct
+  background-image: url("img/render.png")
+  background-size: cover
+  background-repeat: no-repeat
+  height: 1000px
+
+
+.popular
+  background: linear-gradient(90deg, #FFE472 0%, #F8CC55 100%, #FBD846 100%)
+  text-align: center
+
+.card_block
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.card_block:not(:first-child)
+  margin-top: 50px
+
+.card
+  display: flex
+  flex-direction: column
+  border: 2px solid transparent
+  width: 360px
+  height: 420px
+  background: #fff
+  cursor: pointer
+  overflow: hidden
+  text-align: start
+
+.card:hover
+  border: 2px solid #99CB38
+  box-shadow: 5px 5px 10px rgba(51, 51, 51, 0.05)
+
+.card:hover .card_title
+  color: #99CB38
+
+.card_content
+  padding: 25px
+
+.card_title
+  font-weight: 600
+  font-size: 16px
+  line-height: 20px
+
+
+.old_price
+  margin-top: 22px
+  color: #B2B2B2
+  font-weight: 600
+  font-size: 16px
+  text-decoration-line: line-through
+
+.new_price
+  font-weight: 600
+  font-size: 25px
+  color: #99CB38
+  margin-top: 5px
+
+.more_items
+  background: linear-gradient(269.89deg, #99CB38 0.07%, #C0F35B 99.89%)
+  box-shadow: 10px 10px 20px rgba(255, 216, 111, 0.4)
+  margin-top: 50px
+  border-radius: 30px
+  padding: 20px 65px
+  color: #333
+  font-size: 20px
+  font-weight: 700
+
+.subtitle
+  text-align: center
+  line-height: 30px
+  font-weight: 300
+  font-size: 20px
+  margin-top: 25px
+
+.switcher_block
+  display: flex
+  justify-content: space-between
+  margin-top: 60px
+
+.switcher_block p
+  white-space: nowrap
+  padding-top: 15px
+  color: #818181
+  font-weight: 600
+  font-size: 18px
+  line-height: 30px
+
+.switchers
+  margin-left: 25px
+
+.switcher_button
+  color: #8C8C8C
+  font-weight: 400
+  font-size: 16px
+  background: #F5F5F5
+  border-radius: 30px
+  width: 165px
+  height: 40px
+  margin: 10px
+  transition: 0.1s
+
+.switcher_button:hover
+  background: #e3e3e3
+
+.switcher_active
+  color: #333
+  background: #FBD846
+  font-weight: 600
+
+.card_kitchen_style
+  position: relative
+  overflow: hidden
+  cursor: pointer
+  width: 360px
+  height: 260px
+  transition: 0.3s
+
+.card_kitchen_style:hover
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3)
+
+.scale_img
+  position: absolute
+  right: 10px
+  bottom: 15px
+
+.offer_block
+  background: #F5F5F5
+  display: flex
+  border-radius: 30px
+  margin-top: 60px
+  justify-content: space-between
+
+.offer_content
+  padding: 40px 30px
+  width: 65%
+
+.offer_content h1
+  color: #333333
+  font-weight: 900
+  font-size: 22px
+  line-height: 35px
+  text-transform: uppercase
+
+.offer_content p
+  color: #333333
+  font-weight: 400
+  font-size: 16px
+  line-height: 24px
+  text-transform: uppercase
+  margin-top: 30px
+
+.offer_block .form_group
+  display: flex
+  align-items: center
+  margin-top: 40px
+  justify-content: space-between
+
+.offer_block .form_group input
+  border: 1px solid #B0B0B0
+  border-radius: 30px
+  padding: 10px 15px
+  font-size: 20px
+  color: #B0B0B0
+  font-weight: 300
+  width: 100%
+  background: transparent
+
+.offer_block .form_group input:not(:first-child)
+  margin-left: 5px
+
+.offer_block .form_group input::placeholder
+  font-weight: 400
+  color: #B0B0B0
+  font-size: 17px
+
+.action_group
+  display: flex
+  align-items: center
+  margin-top: 30px
+  justify-content: space-between
+
+.action_group label
+  cursor: pointer
+  display: flex
+  align-items: center
+
+.action_group label p
+  color: #737373
+  font-size: 18px
+  line-height: 22px
+  margin: 0
+  margin-left: 20px
+  text-transform: unset
+
+
+.action_content
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin-left: 70px
+
+.action_content span
+  text-align: center
+  color: #737373
+  margin-top: 10px
+  font-size: 10px
+  line-height: 15px
+  font-weight: 400
+
+.quiz
+  background: linear-gradient(90deg, #FFE472 0%, #F8CC55 100%, #FBD846 100%)
+
+.quiz_title_block
+  background: #fff
+  padding: 25px 40px
+
+.gift_title
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-top: 40px
+
+.gift_title p
+  margin-top: 5px
+  margin-left: 10px
+  font-size: 20px
+  font-weight: 300
+  line-height: 30px
+
+.quiz_subtitle_block
+  width: max-content
+  margin: 0 auto
+  background: #fff
+  padding: 20px
+  text-transform: uppercase
+  margin-top: 35px
+
+.quiz_subtitle_block h1
+  font-weight: 900
+  font-size: 28px
+
+.furniture_card
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  background: #fff
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1)
+  width: 360px
+  padding: 25px 20px
+  height: 400px
+
+.furniture_card h1
+  font-weight: 700
+  font-size: 20px
+
+.furniture_card p
+  font-weight: 400
+  font-size: 12px
+  line-height: 15px
+
+.furniture_card .action_btn
+  font-size: 16px
+  padding: 10px 60px
