@@ -16,10 +16,12 @@ div
 
 p,h1,h2,h3,h4,h5,span
   margin: 0
+  cursor: default
 
 a
   text-decoration: none
   font-family: 'Montserrat', sans-serif
+  color: #333333
 
 button
   font-family: 'Montserrat', sans-serif
@@ -29,8 +31,13 @@ button
 button:focus
   outline: none
 
-input:focus
+input,textarea:focus
   outline: none
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
 
 section
   padding: 7vh calc(50% - 600px)
@@ -65,12 +72,22 @@ section
   padding: 0 calc(50% - 600px)
 
 .top_head p
+  display: flex
+  align-items: center
   font-size: 14px
   font-weight: 400
 
-.top_head h5
+.top_head p img
+  margin-right: 10px
+
+.top_head a
+  display: flex
+  align-items: center
   font-size: 16px
   font-weight: 600
+
+.top_head a img
+  margin-right: 10px
 
 header
   display: flex
@@ -96,16 +113,36 @@ header ul li a:hover
 header ul li:not(:first-child)
   margin-left: 20px
 
+.get_call
+  font-size: 16px
+  color: #333
+  border: 1px solid #FBD846
+  background: #fff
+  border-radius: 30px
+  padding: 15px 30px
+  font-weight: 600
+  filter: drop-shadow(2px 2px 4px rgba(255, 216, 111, 0.4))
+  transition: 0.2s
+
+.get_call:hover
+  background: #fff6bd
+
 footer
   background: #333333
   height: 245px
   display: flex
   justify-content: space-between
-  padding: 18px calc(50% - 600px)
+  padding: 25px calc(50% - 600px)
+
+footer img
+  width: fit-content
 
 footer div
   display: flex
   flex-direction: column
+  justify-content: space-around
+
+footer div:last-child
   justify-content: center
 
 footer h1
@@ -115,14 +152,94 @@ footer h1
 
 footer a
   color: #fff
+  display: flex
+  align-items: center
   font-weight: 400
   font-size: 16px
+  transition: 0.2s
+
+footer a:hover
+  color: #99CB38
+
+footer a img
+  margin-right: 10px
+
+footer a:not(:first-child)
+  margin-top: 20px
+
+footer a:not(:first-child) img
+  margin-left: 5px
 
 footer p
   color: #fff
   font-weight: 400
   font-size: 16px
   width: 15vw
+
+.top_footer
+  background: #262626
+  display: flex
+  justify-content: space-between
+
+.top_footer .form_group
+  display: flex
+  justify-content: space-between
+
+.top_footer .form_group input
+  display: block
+  width: 44%
+  background: transparent
+  border: 1px solid #B0B0B0
+  border-radius: 20px
+  color: #B0B0B0
+  padding: 20px 15px
+  font-size: 20px
+
+.top_footer .form_group input::placeholder
+  color: #B0B0B0
+  font-weight: 400
+  font-size: 20px
+
+.top_footer p
+  font-size: 12px
+  line-height: 15px
+  color: #B0B0B0
+  width: 330px
+
+.top_foot_content
+  width: 100%
+
+.top_foot_content form, .top_foot_content form textarea, .top_foot_content .action_block
+  margin-top: 30px
+
+.top_footer .action_btn
+  padding: 15px 40px
+
+.top_footer .action_block
+  justify-content: space-between
+
+.top_footer textarea
+  display: block
+  width: 100%
+  background: transparent
+  border: 1px solid #B0B0B0
+  border-radius: 30px
+  color: #B0B0B0
+  box-sizing: border-box
+  padding: 20px
+  resize: none
+  font-size: 20px
+
+
+.top_footer .title h1
+  color: #fff
+  font-weight: 800
+  font-size: 25px
+
+.top_footer .title span
+  font-weight: 800
+  font-size: 25px
+
 
 .main
   background-image: url("img/mainbg.png")
@@ -186,6 +303,7 @@ footer p
   padding: 15px 60px
   font-size: 20px
   font-weight: 700
+  white-space: nowrap
 
 .construct
   background-image: url("img/render.png")
@@ -216,16 +334,22 @@ footer p
   cursor: pointer
   overflow: hidden
   text-align: start
+  transition: 0.2s
+  box-shadow: 5px 5px 10px rgba(51, 51, 51, 0.05)
 
 .card:hover
   border: 2px solid #99CB38
-  box-shadow: 5px 5px 10px rgba(51, 51, 51, 0.05)
+
+.card:hover .plus
+  color: #fff
+  background: #99CB38
 
 .card:hover .card_title
   color: #99CB38
 
 .card_content
   padding: 25px
+  position: relative
 
 .card_title
   font-weight: 600
@@ -245,6 +369,22 @@ footer p
   font-size: 25px
   color: #99CB38
   margin-top: 5px
+
+.plus
+  position: absolute
+  width: 40px
+  height: 40px
+  display: flex
+  justify-content: center
+  text-align: center
+  font-weight: 300
+  font-size: 30px
+  right: 5%
+  bottom: 15%
+  border-radius: 100px
+  color: #99CB38
+  background: #F4F4F4
+  transition: 0.2s
 
 .more_items
   background: linear-gradient(269.89deg, #99CB38 0.07%, #C0F35B 99.89%)
@@ -430,6 +570,39 @@ footer p
   font-weight: 900
   font-size: 28px
 
+.quiz_card_block
+  margin-top: 35px
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+
+.quiz_card
+  display: flex
+  width: 260px
+  height: 280px
+  flex-direction: column
+  justify-content: space-between
+  padding: 20px
+  align-items: center
+  text-align: center
+  background: #FFFFFF
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1)
+  border-radius: 10px
+
+.quiz_card h1
+  font-weight: 600
+  font-size: 20px
+  line-height: 24px
+  text-align: center
+  text-transform: uppercase
+
+.quiz_card p
+  font-size: 14px
+  line-height: 17px
+  font-weight: 400
+  text-align: center
+  text-transform: uppercase
+
 .furniture_card
   display: flex
   flex-direction: column
@@ -438,17 +611,491 @@ footer p
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1)
   width: 360px
   padding: 25px 20px
-  height: 400px
+  height: 440px
+  transition: 0.2s
+  border: 2px solid #fff
+
+.furniture_card:hover
+  border: 2px solid #FBD846
 
 .furniture_card h1
   font-weight: 700
   font-size: 20px
+  cursor: default
 
 .furniture_card p
   font-weight: 400
   font-size: 12px
-  line-height: 15px
+  line-height: 17px
+  margin-top: 10px
 
 .furniture_card .action_btn
   font-size: 16px
   padding: 10px 60px
+  transition: 0.2s
+  border: 1px solid transparent
+
+.furniture_card .action_btn:hover
+  cursor: pointer
+  border: 1px solid #FBD846
+  background: #fff
+
+.furniture_card p img
+  margin: 0px 0px 0 20px
+
+.bottom_desc
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.bot_desc_content
+  padding-right: 30px
+
+.bottom_desc_rev
+  display: flex
+  align-items: center
+  justify-content: space-between
+  flex-direction: row-reverse
+  text-align: end
+
+.bottom_desc_rev h1
+  text-transform: uppercase
+  font-weight: 900
+  font-size: 28px
+  line-height: 30px
+
+.bottom_desc_rev p
+  font-size: 18px
+  line-height: 30px
+  font-weight: 400
+  text-align: justify
+  margin-top: 25px
+
+.bottom_desc_rev .bot_desc_content
+  padding: 0
+  padding-left: 30px
+
+.bottom_desc h1
+  text-transform: uppercase
+  font-weight: 900
+  font-size: 28px
+  line-height: 30px
+
+.bottom_desc p
+  font-size: 18px
+  line-height: 30px
+  font-weight: 400
+  text-align: justify
+  margin-top: 25px
+
+.prod
+  background: url("img/prod_bg.png")
+  background-size: cover
+  background-repeat: no-repeat
+
+.prod .title
+  display: block
+  background: #FBD846
+  width: max-content
+  margin: 0 auto
+  margin: 0 auto
+  padding: 20px 25px
+
+.prod .title h1
+  color: #000000
+  font-weight: 900
+  font-size: 28px
+  line-height: 30px
+  text-align: center
+  text-transform: uppercase
+
+.prod_card
+  position: relative
+  width: 360px
+  height: 320px
+
+.prod_card h3
+  position: absolute
+  font-weight: 600
+  font-size: 18px
+  text-align: center
+  width: 100%
+  text-transform: uppercase
+  bottom: 40px
+  color: #fff
+
+.portfolio
+  background: #FBD846
+
+//Module
+
+.module_main
+  display: flex
+  justify-content: space-between
+
+.module_main h1
+  font-weight: 900
+  font-size: 28px
+  line-height: 34px
+  text-transform: uppercase
+
+.module_main p
+  font-weight: 500
+  color: #000
+  font-size: 18px
+  line-height: 30px
+
+.module_main p:not(:first-child)
+  margin-top: 30px
+
+.module_second
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+
+.module_second p
+  font-size: 18px
+  line-height: 30px
+  color: #000
+
+.module_second img
+  margin-top: 40px
+
+.module_second .more_items
+  font-weight: 400
+  padding: 20px 40px
+  font-size: 16px
+
+.module_offer
+  background: linear-gradient(180deg, #FFE472 0%, #F8CC55 100%, #FBD846 100%)
+
+.module_offer .offer_block
+  margin: 0
+
+.module_desc h1
+  font-weight: 900
+  margin-top: 50px
+  font-size: 28px
+  line-height: 34px
+  text-transform: uppercase
+
+.module_desc p
+  font-size: 18px
+  line-height: 30px
+  font-weight: 400
+  color: #000
+
+.module_desc p:not(:first-child)
+  margin-top: 30px
+
+//Catalog
+
+.catalog_top_head
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.catalog_top_head select
+  font-family: 'Montserrat', sans-serif
+  border-radius: 100px
+  background: #F0F0F0
+  border: none
+  font-size: 16px
+  font-weight: 500
+  padding: 10px
+  cursor: pointer
+
+.catalog_top_head select:focus
+  outline: none
+
+.catalog_title h1
+  font-weight: 900
+  font-size: 28px
+  line-height: 34px
+  text-transform: uppercase
+
+.catalog_title p
+  font-size: 16px
+  font-weight: 400
+  margin-top: 25px
+  line-height: 20px
+  color: #000
+
+.catalog_content .load_more
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-top: 60px
+
+.catalog_content .load_more .action_btn
+  font-size: 20px
+
+//Contacts
+
+.contacts_top_head
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.contacts_title h1
+  font-weight: 900
+  font-size: 28px
+  line-height: 34px
+  text-transform: uppercase
+
+.contacts_title
+  width: 30vw
+
+.contacts_title ul
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+.contacts_title ul li
+  margin-top: 30px
+
+.contacts_title ul li:nth-child(3),.contacts_title ul li:nth-child(4)
+  margin-left: 40px
+
+.contacts_title ul li p
+  font-weight: 600
+  font-size: 16px
+
+.contacts_title ul li p span
+  font-weight: 400
+
+.contacts_title ul li a
+  display: flex
+  align-items: center
+  transition: 0.2s
+
+.contacts_title ul li a:hover
+  color: #99CB38
+
+.contacts_title ul li a img,.contacts_title ul li p img
+  margin-right: 10px
+
+.contacts_content p
+  color: #000
+  font-weight: 400
+  font-size: 16px
+  line-height: 30px
+  cursor: default
+
+.contacts_content p:not(:first-child)
+  margin-top: 40px
+
+//READY
+
+.ready_title h1
+  font-weight: 900
+  font-size: 28px
+  line-height: 34px
+  text-transform: uppercase
+
+.ready_cards_block
+  margin-top: 50px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+
+.ready_card
+  width: 555px
+  height: 433px
+  position: relative
+  overflow: hidden
+
+.ready_plus
+  color: #FBD846
+  border-radius: 100px
+  display: flex
+  align-items: center
+  justify-content: center
+  position: absolute
+  width: 40px
+  height: 40px
+  text-align: center
+  background: rgba(51, 51, 51, 0.8)
+  overflow: hidden
+  right: 5%
+  bottom: 5%
+
+.ready_plus h3
+  font-size: 40px
+  font-weight: 300
+
+
+//PHOTOPRINT
+
+.title_description
+  margin-top: 40px
+
+.title_description p
+  font-weight: 400
+  font-size: 18px
+  line-height: 30px
+  color: #000
+
+.title_description p:not(:first-child)
+  margin-top: 40px
+
+.photoprint_content
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.photoprint_content img
+  margin-top: 20px
+  width: 90%
+
+
+
+//DECOR
+
+.decor_switchers
+  display: flex
+  margin-top: 60px
+  justify-content: space-between
+  background: #F4F4F4
+  border: 1px solid #99CB38
+  padding: 7px
+  border-radius: 30px
+
+.decor_switch
+  font-weight: 600
+  font-size: 16px
+  color: #9B9B9B
+  background: transparent
+  text-transform: uppercase
+  cursor: pointer
+  padding: 5px 15px
+  border-radius: 30px
+  transition: 0.2s
+
+.decor_switch:hover
+  background: #ddff7e
+
+.decor_switch_active
+  background: #99CB38
+  border-radius: 30px
+  color: #fff
+
+.decor_content
+  margin-top: 50px
+
+.decor_content .switcher_block
+  justify-content: flex-start
+
+.decor_content .switcher_button
+  white-space: nowrap
+  width: auto
+  padding: 10px 53px
+
+.decor_content p
+  color: #000
+  font-weight: 400
+  font-size: 18px
+  line-height: 30px
+
+.decor_content .tab
+  display: none
+
+.decor_content .tab.is_active
+  display: block
+
+.decor_content .tab p:not(:first-child)
+  margin-top: 40px
+
+.handle
+  margin-top: 80px
+
+.handle h1
+  color: #333
+  font-weight: 900
+  font-size: 28px
+  line-height: 34px
+  text-transform: uppercase
+
+.handle_block
+  margin-top: 40px
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+
+.palette
+  display: flex
+  flex-direction: column
+  text-align: start
+  margin-top: 70px
+
+.palette h1
+  font-weight: 900
+  font-size: 28px
+  line-height: 34px
+  text-transform: uppercase
+
+.palette img
+  margin: 0 auto
+  margin-top: 50px
+
+.spoilers
+  margin-top: 80px
+
+.collapse_content
+  max-height: 0
+  overflow: hidden
+  transition: max-height 0.2s ease-out
+
+.collapse
+  width: 100%
+  color: #fff
+  background: #262626
+  padding: 35px 25px
+  text-align: start
+  font-weight: 600
+  font-size: 20px
+  line-height: 29px
+  text-transform: uppercase
+
+.collapse:not(:first-child)
+  margin-top: 5px
+
+.ldsp_content
+  text-align: center
+
+.ldsp_content h1
+  font-weight: 800
+  padding: 40px 0
+  font-size: 24px
+  line-height: 29px
+  text-align: center
+  text-transform: uppercase
+  color: #FBD846
+
+.ldsp_content_block
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.ldsp_card
+  cursor: pointer
+  position: relative
+
+.ldsp_card .ldsp_zoom
+  position: absolute
+  right: 5%
+  bottom: 22%
+
+.ldsp_card p
+  margin-top: 3px
+
+.mdf_desc
+  margin-top: 100px
+
+.mdf_desc h1
+  font-weight: 900
+  font-size: 28px
+  line-height: 34px
+  text-transform: uppercase
